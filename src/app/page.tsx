@@ -24,7 +24,7 @@ export default function NotionStylePlanner() {
 					>
 						<h2 className={styles['day-headline']}>{day}</h2>
 						<div className={styles['day-content']} contentEditable={true}
-							 suppressContentEditableWarning/>
+						     suppressContentEditableWarning/>
 					</div>
 				))}
 
