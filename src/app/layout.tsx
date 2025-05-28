@@ -1,21 +1,21 @@
-import type {Metadata} from "next";
-import {Geist, Geist_Mono} from "next/font/google";
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import {Montserrat} from 'next/font/google';
-import {Inder} from 'next/font/google';
+import { Montserrat } from "next/font/google";
+import { Inder } from "next/font/google";
 
 const montserrat = Montserrat({
-	subsets: ['latin'],
-	weight: ['200', '400', '600'],
-	display: 'swap',
-	variable: '--font-montserrat',
+	subsets: ["latin"],
+	weight: ["200", "400", "600"],
+	display: "swap",
+	variable: "--font-montserrat",
 });
 
 const inter = Inder({
-	subsets: ['latin'],
-	weight: '400',
-	display: 'swap',
-	variable: '--font-inter',
+	subsets: ["latin"],
+	weight: "400",
+	display: "swap",
+	variable: "--font-inter",
 });
 
 const geistSans = Geist({
@@ -34,15 +34,15 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-	                                   children,
-                                   }: Readonly<{
+	children,
+}: Readonly<{
 	children: React.ReactNode;
 }>) {
 	return (
 		<html lang="en">
-		<body className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable}  ${inter.variable}`}>
-		{children}
-		</body>
+			<body className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable}  ${inter.variable}`}>
+				{children}
+			</body>
 		</html>
 	);
 }
