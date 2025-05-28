@@ -1,0 +1,27 @@
+.title {
+	font-size: 28px;
+	font-weight: 700;
+	margin-bottom: 16px;
+}
+
+.input {
+	flex: 1;
+}
+
+.task {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: white;
+	transition: box-shadow 0.2s ease;
+	border-radius: 8px;
+
+	&:hover {
+		box-shadow: 0 0 0 1px var(--mantine-color-gray-3);
+	}
+}
+
+.completed {
+	text-decoration: line-through;
+	color: var(--mantine-color-gray-6);
+}
