@@ -1,0 +1,51 @@
+$breakpoints: (
+	phone: 76.7rem,
+	tablet: 102.4rem,
+	desktop: 128rem,
+	desktop-lg: 160rem
+);
+
+@mixin phone {
+	@media (min-width: map-get($breakpoints, phone)) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (min-width: map-get($breakpoints, tablet)) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: map-get($breakpoints, desktop)) {
+		@content;
+	}
+}
+
+@mixin desktop-lg {
+	@media (min-width: map-get($breakpoints, desktop-lg)) {
+		@content;
+	}
+}
+
+
+@mixin responsive-font(
+	$min-size,     // in rem
+	$max-size,     // in rem
+	$min-vw: 76.7, // in rem (767px)
+	$max-vw: 160   // in rem (1600px)
+) {
+	font-size: clamp-builder($min-vw, $max-vw, $min-size, $max-size);
+}
+
+@function clamp-builder($min-width, $max-width, $min-size, $max-size) {
+	$slope: ($max-size - $min-size) / ($max-width - $min-width);
+	$y-intercept: $min-size - ($slope * $min-width);
+
+	@return clamp(
+		#{$min-size}rem,
+		#{$y-intercept}rem + #{($slope * 100)}vw,
+		#{$max-size}rem
+	);
+}

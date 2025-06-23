@@ -1,0 +1,25 @@
+@use '../../styles/typography' as typography;
+
+.headline1 {
+	@include typography.headline-1;
+}
+
+.headline2 {
+	@include typography.headline-2;
+}
+
+.headline3 {
+	@include typography.headline-3;
+}
+
+.headline4 {
+	@include typography.headline-4;
+}
+
+.headline5 {
+	@include typography.headline-5;
+}
+
+.headline6 {
+	@include typography.headline-6;
+}

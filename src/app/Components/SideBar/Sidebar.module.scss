@@ -1,0 +1,10 @@
+@use "../../styles/mixins" as mixins;
+@use "../../styles/typography" as typography;
+
+
+.sidebar {
+	.headline1 {
+		@include typography.headline-1
+	}
+
+}

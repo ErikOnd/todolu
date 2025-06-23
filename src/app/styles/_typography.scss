@@ -1,0 +1,72 @@
+@use 'mixins' as mixins;
+@use 'variables' as variables;
+
+@mixin headline-1 {
+	@include mixins.responsive-font(4.8, 6.4);
+	font-weight: 700;
+	line-height: 1.1;
+	color: variables.$color-text;
+}
+
+@mixin headline-2 {
+	@include mixins.responsive-font(2.8, 5.2);
+	font-weight: 700;
+	line-height: 1.15;
+	color: variables.$color-text;
+}
+
+@mixin headline-3 {
+	@include mixins.responsive-font(2.4, 4.0);
+	font-weight: 700;
+	line-height: 1.2;
+	color: variables.$color-text;
+}
+
+@mixin headline-4 {
+	@include mixins.responsive-font(2.0, 3.2);
+	font-weight: 600;
+	line-height: 1.3;
+	color: variables.$color-text;
+}
+
+@mixin headline-5 {
+	@include mixins.responsive-font(1.8, 2.8);
+	font-weight: 600;
+	line-height: 1.4;
+	color: variables.$color-text;
+}
+
+@mixin headline-6 {
+	@include mixins.responsive-font(1.6, 2.4);
+	font-weight: 600;
+	line-height: 1.4;
+	color: variables.$color-text;
+}
+
+@mixin text-l {
+	font-size: 2.4rem;
+	font-weight: 500;
+	line-height: 1.5;
+	color: variables.$color-text;
+}
+
+@mixin text-m {
+	font-size: 1.8rem;
+	font-weight: 500;
+	line-height: 1.6;
+	color: variables.$color-text;
+}
+
+@mixin text-s {
+	font-size: 1.6rem;
+	font-weight: 500;
+	line-height: 1.6;
+	color: variables.$color-text;
+}
+
+@mixin text-xs {
+	font-size: 1.2rem;
+	font-weight: 500;
+	line-height: 1.4;
+	color: variables.$color-text;
+}
