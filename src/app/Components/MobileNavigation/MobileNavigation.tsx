@@ -2,20 +2,24 @@
 
 import { Icon } from "@atoms/Icons/Icon";
 import { Text } from "@atoms/Text/Text";
+import { getCurrentWeek } from "@utils/getCurrentWeek";
 import clsx from "clsx";
+import { useEffect, useRef, useState } from "react";
 import styles from "./MobileNavigation.module.scss";
 
-import { getCurrentWeek } from "@utils/getCurrentWeek";
-import { useEffect, useRef, useState } from "react";
+type MobileNavigationProps = {
+	content: "weekly" | "remember" | "profile";
+	onChange: (value: "weekly" | "remember" | "profile") => void;
+};
 
-const navItems = [
+const navItems: { value: "weekly" | "remember" | "profile"; label: string }[] = [
 	{ value: "weekly", label: "Weekly" },
 	{ value: "remember", label: "To Remember" },
 	{ value: "profile", label: "Profile" },
 ];
 
-export function MobileNavigation() {
-	const [content, setContent] = useState("weekly");
+export function MobileNavigation(props: MobileNavigationProps) {
+	const { content, onChange } = props;
 	const [baseDate, setBaseDate] = useState(new Date());
 	const { days, rangeLabel } = getCurrentWeek(baseDate);
 	const todayIndex = days.findIndex((day) => day.isToday);
@@ -41,9 +45,7 @@ export function MobileNavigation() {
 					return (
 						<button
 							key={value}
-							onClick={() => {
-								setContent(value);
-							}}
+							onClick={() => onChange(value)}
 							className={clsx(styles["slider-button"], value === content && styles.active)}
 						>
 							<div className={styles["slider-button-label"]}>{label}</div>
