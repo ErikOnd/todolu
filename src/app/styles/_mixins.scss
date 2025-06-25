@@ -1,3 +1,6 @@
+@use "sass:math";
+@use "sass:map";
+
 $breakpoints: (
 	phone: 767px,
 	tablet: 1024px,
@@ -6,25 +9,25 @@ $breakpoints: (
 );
 
 @mixin phone {
-	@media (min-width: map-get($breakpoints, phone)) {
+	@media (min-width: map.get($breakpoints, phone)) {
 		@content;
 	}
 }
 
 @mixin tablet {
-	@media (min-width: map-get($breakpoints, tablet)) {
+	@media (min-width: map.get($breakpoints, tablet)) {
 		@content;
 	}
 }
 
 @mixin desktop {
-	@media (min-width: map-get($breakpoints, desktop)) {
+	@media (min-width: map.get($breakpoints, desktop)) {
 		@content;
 	}
 }
 
 @mixin desktop-lg {
-	@media (min-width: map-get($breakpoints, desktop-lg)) {
+	@media (min-width: map.get($breakpoints, desktop-lg)) {
 		@content;
 	}
 }
@@ -40,7 +43,7 @@ $breakpoints: (
 @function clamp-builder($min-size, $max-size) {
 	$min-vw: 76.7;
 	$max-vw: 160;
-	$slope: ($max-size - $min-size) / ($max-vw - $min-vw);
+	$slope: math.div($max-size - $min-size, $max-vw - $min-vw);
 	$y-intercept: $min-size - ($slope * $min-vw);
 
 	@return clamp(
