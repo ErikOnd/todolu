@@ -33,7 +33,7 @@ jobs:
             ${{ runner.os }}-pnpm-
 
       - name: 📦 Install dependencies
-        run: pnpm install
+        run: pnpm install --store-dir=~/.pnpm-store
 
       - name: 🧹 Lint
         run: pnpm lint
