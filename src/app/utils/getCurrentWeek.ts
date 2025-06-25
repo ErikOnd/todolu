@@ -14,18 +14,21 @@ export function getCurrentWeek(baseDate: Date) {
 		week.push({
 			label: weekdayLabels[i],
 			date: date.getDate().toString(),
-			isToday:
-				date.getDate() === today.getDate() &&
-				date.getMonth() === today.getMonth() &&
-				date.getFullYear() === today.getFullYear(),
+			isToday: date.getDate() === today.getDate()
+				&& date.getMonth() === today.getMonth()
+				&& date.getFullYear() === today.getFullYear(),
 		});
 	}
 
-	const rangeLabel = `${monday.toLocaleString("en-US", {
-		month: "short",
-	})} ${monday.getDate()} - ${(new Date(monday.getTime() + 6 * 86400000)).toLocaleString("en-US", {
-		month: "short",
-	})} ${(new Date(monday.getTime() + 6 * 86400000)).getDate()}`;
+	const rangeLabel = `${
+		monday.toLocaleString("en-US", {
+			month: "short",
+		})
+	} ${monday.getDate()} - ${
+		(new Date(monday.getTime() + 6 * 86400000)).toLocaleString("en-US", {
+			month: "short",
+		})
+	} ${(new Date(monday.getTime() + 6 * 86400000)).getDate()}`;
 
 	return { days: week, rangeLabel };
 }

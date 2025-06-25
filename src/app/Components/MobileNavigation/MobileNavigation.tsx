@@ -1,26 +1,23 @@
 "use client";
 
-import {Icon} from "@atoms/Icons/Icon";
-import {Text} from "@atoms/Text/Text";
-import LogoText from "@assets/logo/logo-text.png";
+import { Icon } from "@atoms/Icons/Icon";
+import { Text } from "@atoms/Text/Text";
 import clsx from "clsx";
 import styles from "./MobileNavigation.module.scss";
 
-import {useEffect, useRef, useState} from "react";
-import {getCurrentWeek} from "@utils/getCurrentWeek";
-import Image from "next/image";
+import { getCurrentWeek } from "@utils/getCurrentWeek";
+import { useEffect, useRef, useState } from "react";
 
 const navItems = [
-	{value: "weekly", label: "Weekly"},
-	{value: "remember", label: "To Remember"},
-	{value: "profile", label: "Profile"},
+	{ value: "weekly", label: "Weekly" },
+	{ value: "remember", label: "To Remember" },
+	{ value: "profile", label: "Profile" },
 ];
 
 export function MobileNavigation() {
-
 	const [content, setContent] = useState("weekly");
 	const [baseDate, setBaseDate] = useState(new Date());
-	const {days, rangeLabel} = getCurrentWeek(baseDate);
+	const { days, rangeLabel } = getCurrentWeek(baseDate);
 	const todayIndex = days.findIndex((day) => day.isToday);
 	const [selectedDayIndex, setSelectedDayIndex] = useState(todayIndex);
 	const dayRefs = useRef<(HTMLButtonElement | null)[]>([]);
@@ -40,7 +37,7 @@ export function MobileNavigation() {
 	return (
 		<nav className={styles["mobile-navigation"]}>
 			<div className={styles["slider-section"]}>
-				{navItems.map(({value, label}) => {
+				{navItems.map(({ value, label }) => {
 					return (
 						<button
 							key={value}
@@ -50,7 +47,7 @@ export function MobileNavigation() {
 							className={clsx(styles["slider-button"], value === content && styles.active)}
 						>
 							<div className={styles["slider-button-label"]}>{label}</div>
-							{value && <div className={styles.underline}/>}
+							{value && <div className={styles.underline} />}
 						</button>
 					);
 				})}
@@ -60,18 +57,18 @@ export function MobileNavigation() {
 					className={styles["icon-button"]}
 					onClick={() => setBaseDate(prev => new Date(prev.getTime() - 7 * dayInMs))}
 				>
-					<Icon name="chevron-left"/>
+					<Icon name="chevron-left" />
 				</button>
 				<Text>{rangeLabel}</Text>
 				<button
 					className={styles["icon-button"]}
 					onClick={() => setBaseDate(prev => new Date(prev.getTime() + 7 * dayInMs))}
 				>
-					<Icon name="chevron-right"/>
+					<Icon name="chevron-right" />
 				</button>
 			</div>
 			<div className={styles["calendar-section"]}>
-				{days.map(({label, date}, index) => (
+				{days.map(({ label, date }, index) => (
 					<button
 						key={index}
 						ref={(el) => {
@@ -79,7 +76,7 @@ export function MobileNavigation() {
 						}}
 						className={clsx(
 							styles["day-button"],
-							index === selectedDayIndex && styles["active-day"]
+							index === selectedDayIndex && styles["active-day"],
 						)}
 						onClick={() => setSelectedDayIndex(index)}
 					>
