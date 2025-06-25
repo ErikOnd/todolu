@@ -24,6 +24,7 @@
 			"@components/*": ["app/Components/*"],
 			"@atoms/*": ["app/Atoms/*"],
 			"@hooks/*": ["app/hooks/*"],
+			"@utils/*": ["app/utils/*"],
 			"@styles/*": ["app/styles/*"],
 			"@app": ["app"]
 		}
