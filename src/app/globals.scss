@@ -1,4 +1,6 @@
-@import "styles/variables";
+@use "styles/mixins" as mixins;
+@use "styles/variables" as variables;
+
 
 @font-face {
 	font-family: 'Inter';
@@ -27,30 +29,26 @@
 :root {
 	--font-inter: 'Inter', sans-serif;
 	/* Colors */
-	--color-text: #{$color-text};
-	--color-text-muted: #{$color-text-muted};
-	--color-text-light: #{$color-text-light};
-	--color-background: #{$color-background};
-	--color-border: #{$color-border};
+	--color-text: #{variables.$color-text};
+	--color-text-muted: #{variables.$color-text-muted};
+	--color-text-light: #{variables.$color-text-light};
+	--color-background: #{variables.$color-background};
+	--color-border: #{variables.$color-border};
 
-	--color-primary: #{$color-primary};
-	--color-primary-light: #{$color-primary-light};
-	--color-gray-light: #{$color-gray-light};
-	--color-day-label: #{$color-day-label};
-	--color-day-label-text: #{$color-day-label-text};
+	--color-primary: #{variables.$color-primary};
+	--color-primary-light: #{variables.$color-primary-light};
+	--color-gray-light: #{variables.$color-gray-light};
+	--color-day-label: #{variables.$color-day-label};
 
-	/* Spacing */
-	--space-xs: #{$space-xs};
-	--space-sm: #{$space-sm};
-	--space-md: #{$space-md};
-	--space-lg: #{$space-lg};
-	--space-xl: #{$space-xl};
-	--space-2xl: #{$space-2xl};
+	/* Spacings */
+	--space-xs: #{mixins.clamp-builder(0.4, 0.8)};
+	--space-sm: #{mixins.clamp-builder(0.8, 1.2)};
+	--space-md: #{mixins.clamp-builder(1.2, 1.6)};
+	--space-lg: #{mixins.clamp-builder(1.6, 2.4)};
+	--space-xl: #{mixins.clamp-builder(2.4, 3.2)};
+	--space-2xl: #{mixins.clamp-builder(3.2, 4.0)};
 
-	/* Border radius */
-	--radius-sm: #{$radius-sm};
-	--radius-md: #{$radius-md};
-	--radius-lg: #{$radius-lg};
+	--content-spacing: #{mixins.clamp-builder(2.4, 4.8)};
 }
 
 html {
@@ -70,7 +68,6 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background: var(--color-background);
-	color: var(--color-text);
 	font-family: var(--font-inter), sans-serif;
 }
 

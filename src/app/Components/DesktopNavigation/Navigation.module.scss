@@ -1,0 +1,14 @@
+@use "../../styles/mixins" as mixins;
+@use "../../styles/typography" as typography;
+@use "../../styles/variables" as variables;
+
+.desktop-navigation {
+	display: flex;
+	width: 100%;
+	border-bottom: .2rem solid var(--color-border);
+	padding: var(--space-md);
+
+	.logo-section {
+
+	}
+}

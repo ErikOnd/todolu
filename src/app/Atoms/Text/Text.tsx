@@ -1,20 +1,20 @@
 import clsx from "clsx";
+import { ReactNode } from "react";
 import styles from "./Text.module.scss";
-import {ReactNode} from "react";
 
 type TextProps = {
-	size?: "xs" | "s" | "m"| "l";
+	size?: "xs" | "sm" | "base" | "lg" | "xl";
 	as?: "p" | "span" | "div";
 	children: ReactNode;
 	className?: string;
 };
 
 export function Text({
-	                     size = "m",
-	                     as = "div",
-	                     children,
-	                     className,
-                     }: TextProps) {
+	size = "base",
+	as = "div",
+	children,
+	className,
+}: TextProps) {
 	const Tag = as;
 	return (
 		<Tag className={clsx(styles[`text-${size}`], className)}>

@@ -43,30 +43,32 @@
 	color: variables.$color-text;
 }
 
-@mixin text-l {
-	font-size: 2.4rem;
-	font-weight: 500;
-	line-height: 1.5;
-	color: variables.$color-text;
+@mixin text-xl {
+	font-size: 2rem;
+	font-weight: 600;
+	line-height: 1.4;
 }
 
-@mixin text-m {
+@mixin text-lg {
 	font-size: 1.8rem;
 	font-weight: 500;
-	line-height: 1.6;
-	color: variables.$color-text;
+	line-height: 1.5;
 }
 
-@mixin text-s {
+@mixin text-base {
 	font-size: 1.6rem;
 	font-weight: 500;
 	line-height: 1.6;
-	color: variables.$color-text;
+}
+
+@mixin text-sm {
+	font-size: 1.4rem;
+	font-weight: 500;
+	line-height: 1.6;
 }
 
 @mixin text-xs {
 	font-size: 1.2rem;
 	font-weight: 500;
 	line-height: 1.4;
-	color: variables.$color-text;
 }

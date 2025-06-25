@@ -1,0 +1,21 @@
+@use "styles/mixins" as mixins;
+@use "styles/variables" as variables;
+
+.home-page {
+	.mobile-view {
+		display: block;
+	}
+
+	.desktop-view {
+		display: none;
+	}
+
+	@include mixins.tablet {
+		.mobile-view {
+			display: none;
+		}
+		.desktop-view {
+			display: block;
+		}
+	}
+}

@@ -1,18 +1,21 @@
 @use '../../styles/typography' as typography;
 
-.text-l {
-	@include typography.text-l
+.text-xl {
+	@include typography.text-xl;
 }
 
-.text-m {
-	@include typography.text-m
+.text-lg {
+	@include typography.text-lg;
 }
 
-.text-s {
-	@include typography.text-s
+.text-base {
+	@include typography.text-base;
+}
+
+.text-sm {
+	@include typography.text-sm;
 }
 
 .text-xs {
-	@include typography.text-xs
+	@include typography.text-xs;
 }
-

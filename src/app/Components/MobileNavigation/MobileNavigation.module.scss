@@ -1,0 +1,64 @@
+@use "../../styles/variables" as variables;
+@use "../../styles/mixins" as mixins;
+@use "../../styles/typography" as typography;
+
+.mobile-navigation {
+	display: flex;
+	flex-direction: column;
+	padding-top: var(--space-sm);
+
+	.navigation-header {
+		font-weight: 800;
+		color: var(--color-primary);
+		align-self: center;
+		padding-bottom: var(--space-sm);
+		padding-inline: var(--content-spacing);
+
+	}
+
+	.slider-section {
+		display: flex;
+		justify-content: space-between;
+		border-bottom: .1rem solid var(--color-border);
+		padding-bottom: var(--space-xl);
+		padding-inline: var(--content-spacing);
+	}
+
+	.slider-button {
+		@include typography.text-base;
+		color: var(--color-text-muted);
+		background-color: white;
+		border: none;
+		cursor: pointer;
+
+		&:hover {
+			color: var(--color-primary);
+		}
+
+		&:focus-visible {
+			color: var(--color-primary);
+			outline: .2rem solid var(--color-primary);
+			border-radius: variables.$radius-sm;
+		}
+
+		.slider-button-label {
+			padding: .2rem .4rem;
+		}
+	}
+
+	.active {
+		color: var(--color-primary);
+	}
+
+	.date-section {
+		display: flex;
+		justify-content: space-between;
+		padding-block: var(--space-xl);
+		padding-inline: var(--content-spacing);
+	}
+
+	.icon-button {
+
+	}
+
+}
