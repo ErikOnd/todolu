@@ -6,6 +6,7 @@
 	display: flex;
 	flex-direction: column;
 	padding-top: var(--space-sm);
+	background-color: white;
 
 	.slider-section {
 		display: flex;
@@ -78,6 +79,8 @@
 		border-bottom: 1px solid var(--color-border);
 		scroll-snap-type: x mandatory;
 		scroll-padding-inline: 50%;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
 	}
 
 	.day-button {

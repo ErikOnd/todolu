@@ -13,11 +13,12 @@ import { useState } from "react";
 export default function HomePage() {
 	const isMobile = useMediaQuery("(max-width: 1023px)");
 	const [selectedContent, setSelectedContent] = useState<"weekly" | "remember" | "profile">("weekly");
+	const [selectedDate, setSelectedDate] = useState<Date>(new Date());
 
 	const renderMobileContent = () => {
 		switch (selectedContent) {
 			case "weekly":
-				return <WeeklyContent />;
+				return <WeeklyContent selectedDate={selectedDate} />;
 			case "remember":
 				return <RememberContent />;
 			case "profile":
@@ -32,7 +33,11 @@ export default function HomePage() {
 			{isMobile
 				? (
 					<div className={styles["mobile-view"]}>
-						<MobileNavigation content={selectedContent} onChange={setSelectedContent} />
+						<MobileNavigation
+							content={selectedContent}
+							onChange={setSelectedContent}
+							onSelectDate={setSelectedDate}
+						/>
 						{renderMobileContent()}
 					</div>
 				)

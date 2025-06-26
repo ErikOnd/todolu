@@ -32,6 +32,7 @@
 	--color-text: #{variables.$color-text};
 	--color-text-muted: #{variables.$color-text-muted};
 	--color-text-light: #{variables.$color-text-light};
+	--color-text-placeholder: #{variables.$color-text-placeholder};
 	--color-background: #{variables.$color-background};
 	--color-border: #{variables.$color-border};
 
@@ -48,7 +49,7 @@
 	--space-xl: #{mixins.clamp-builder(2.4, 3.2)};
 	--space-2xl: #{mixins.clamp-builder(3.2, 4.0)};
 
-	--content-spacing: #{mixins.clamp-builder(2.4, 4.8)};
+	--content-spacing: #{mixins.clamp-builder(1.6, 4.8)};
 }
 
 html {

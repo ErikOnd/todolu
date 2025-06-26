@@ -1,24 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import {useState} from "react";
 import styles from "./WeeklyContent.module.scss";
+import {formatToDayLabel} from "@utils/formatToDayLabel";
+import {Text} from "@atoms/Text/Text";
 
-export function WeeklyContent() {
+type WeeklyContentProps = {
+	selectedDate: Date;
+};
+
+export function WeeklyContent(props: WeeklyContentProps) {
+	const {selectedDate} = props;
 	const [text, setText] = useState("");
-	const today = new Date().toLocaleDateString("en-US", {
-		weekday: "long",
-		month: "long",
-		day: "numeric",
-	});
+	const {weekday, date} = formatToDayLabel(selectedDate);
+	const weekdayLong = selectedDate.toLocaleDateString("en-US", {weekday: "long"});
 
 	return (
 		<div className={styles["weekly-content"]}>
-			<div className={styles["date"]}>{today}</div>
+			<div className={styles["date"]}>
+				<Text className={styles["day-batch"]}>{weekday}</Text>
+				<Text className={styles["month-and-day"]}>{date}</Text>
+			</div>
 			<textarea
 				className={styles["textarea"]}
 				value={text}
 				onChange={(e) => setText(e.target.value)}
-				placeholder="Add tasks for Monady..."
+				placeholder={`Add tasks for ${weekdayLong} ...`}
 			/>
 		</div>
 	);

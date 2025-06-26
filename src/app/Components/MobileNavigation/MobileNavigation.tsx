@@ -10,6 +10,7 @@ import styles from "./MobileNavigation.module.scss";
 type MobileNavigationProps = {
 	content: "weekly" | "remember" | "profile";
 	onChange: (value: "weekly" | "remember" | "profile") => void;
+	onSelectDate: (date: Date) => void;
 };
 
 const navItems: { value: "weekly" | "remember" | "profile"; label: string }[] = [
@@ -19,7 +20,7 @@ const navItems: { value: "weekly" | "remember" | "profile"; label: string }[] = 
 ];
 
 export function MobileNavigation(props: MobileNavigationProps) {
-	const { content, onChange } = props;
+	const { content, onChange, onSelectDate } = props;
 	const [baseDate, setBaseDate] = useState(new Date());
 	const { days, rangeLabel } = getCurrentWeek(baseDate);
 	const todayIndex = days.findIndex((day) => day.isToday);
@@ -80,7 +81,10 @@ export function MobileNavigation(props: MobileNavigationProps) {
 							styles["day-button"],
 							index === selectedDayIndex && styles["active-day"],
 						)}
-						onClick={() => setSelectedDayIndex(index)}
+						onClick={() => {
+							setSelectedDayIndex(index);
+							onSelectDate(new Date(baseDate.getTime() + index * dayInMs));
+						}}
 					>
 						<Text>{label}</Text>
 						<Text className={styles["day-date"]}>{date}</Text>
