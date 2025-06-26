@@ -5,14 +5,14 @@
 .mobile-navigation {
 	display: flex;
 	flex-direction: column;
-	padding-top: var(--space-sm);
 	background-color: white;
 
 	.slider-section {
+		position: relative;
 		display: flex;
 		justify-content: space-between;
 		border-bottom: .1rem solid var(--color-border);
-		padding-block: var(--space-xl);
+		padding-block: var(--space-md);
 		padding-inline: var(--content-spacing);
 	}
 
@@ -40,6 +40,14 @@
 
 	.active {
 		color: var(--color-primary);
+	}
+
+	.slider-underline {
+		position: absolute;
+		bottom: 0;
+		height: 2px;
+		background-color: var(--color-primary);
+		transition: left 0.3s ease, width 0.3s ease;
 	}
 
 	.date-section {

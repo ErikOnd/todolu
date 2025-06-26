@@ -39,21 +39,35 @@ export function MobileNavigation(props: MobileNavigationProps) {
 		}
 	}, [selectedDayIndex]);
 
+	const containerRef = useRef<HTMLDivElement>(null);
+	const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0 });
+
+	useEffect(() => {
+		const container = containerRef.current;
+		if (!container) return;
+
+		const active = container.querySelector(`.${styles.active}`) as HTMLElement;
+		if (active) {
+			setUnderlineStyle({
+				left: active.offsetLeft,
+				width: active.offsetWidth,
+			});
+		}
+	}, [content]);
+
 	return (
 		<nav className={styles["mobile-navigation"]}>
-			<div className={styles["slider-section"]}>
-				{navItems.map(({ value, label }) => {
-					return (
-						<button
-							key={value}
-							onClick={() => onChange(value)}
-							className={clsx(styles["slider-button"], value === content && styles.active)}
-						>
-							<div className={styles["slider-button-label"]}>{label}</div>
-							{value && <div className={styles.underline} />}
-						</button>
-					);
-				})}
+			<div className={styles["slider-section"]} ref={containerRef}>
+				{navItems.map(({ value, label }) => (
+					<button
+						key={value}
+						onClick={() => onChange(value)}
+						className={clsx(styles["slider-button"], value === content && styles.active)}
+					>
+						<div className={styles["slider-button-label"]}>{label}</div>
+					</button>
+				))}
+				<div className={styles["slider-underline"]} style={underlineStyle} />
 			</div>
 			<div className={styles["date-section"]}>
 				<button
