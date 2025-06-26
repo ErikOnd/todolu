@@ -41,6 +41,10 @@
 	border: 1px solid #ccc;
 	border-radius: 0.5rem;
 
+	&:focus-visible {
+		outline: .2rem solid var(--color-primary);
+	}
+
 	&::placeholder {
 		color: var(--color-text-placeholder);
 	}

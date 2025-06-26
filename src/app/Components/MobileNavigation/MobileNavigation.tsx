@@ -85,7 +85,7 @@ export function MobileNavigation(props: MobileNavigationProps) {
 				</button>
 			</div>
 			<div className={styles["calendar-section"]}>
-				{days.map(({ label, date }, index) => (
+				{days.map(({ label, date, fullDate }, index) => (
 					<button
 						key={index}
 						ref={(el) => {
@@ -97,7 +97,7 @@ export function MobileNavigation(props: MobileNavigationProps) {
 						)}
 						onClick={() => {
 							setSelectedDayIndex(index);
-							onSelectDate(new Date(baseDate.getTime() + index * dayInMs));
+							onSelectDate(fullDate);
 						}}
 					>
 						<Text>{label}</Text>

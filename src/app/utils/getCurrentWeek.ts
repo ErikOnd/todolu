@@ -14,6 +14,7 @@ export function getCurrentWeek(baseDate: Date) {
 		week.push({
 			label: weekdayLabels[i],
 			date: date.getDate().toString(),
+			fullDate: date,
 			isToday: date.getDate() === today.getDate()
 				&& date.getMonth() === today.getMonth()
 				&& date.getFullYear() === today.getFullYear(),

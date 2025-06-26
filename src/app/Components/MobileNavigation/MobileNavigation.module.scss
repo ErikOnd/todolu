@@ -106,6 +106,19 @@
 		cursor: pointer;
 		scroll-snap-align: center;
 
+		&:focus-visible {
+			outline: .2rem solid var(--color-primary);
+		}
+
+		&:hover {
+			background-color: var(--color-primary-light);
+			color: var(--color-primary);
+
+			.day-date {
+				color: var(--color-primary);
+			}
+		}
+
 		&.active-day {
 			background-color: var(--color-primary-light);
 			color: var(--color-primary);

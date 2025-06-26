@@ -11,6 +11,8 @@ type WeeklyContentProps = {
 
 export function WeeklyContent(props: WeeklyContentProps) {
 	const {selectedDate} = props;
+	console.log(selectedDate);
+
 	const [text, setText] = useState("");
 	const {weekday, date} = formatToDayLabel(selectedDate);
 	const weekdayLong = selectedDate.toLocaleDateString("en-US", {weekday: "long"});
