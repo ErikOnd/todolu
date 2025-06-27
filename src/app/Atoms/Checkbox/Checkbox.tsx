@@ -1,5 +1,5 @@
+import { Text } from "@atoms/Text/Text";
 import styles from "./Checkbox.module.scss";
-import {Text} from "@atoms/Text/Text";
 
 type CheckboxProps = {
 	label: string;

@@ -1,15 +1,15 @@
-import styles from "./WeeklySlider.module.scss"
-import {Icon} from "@atoms/Icons/Icon";
-import {Text} from "@atoms/Text/Text";
+import { Icon } from "@atoms/Icons/Icon";
+import { Text } from "@atoms/Text/Text";
+import styles from "./WeeklySlider.module.scss";
 
 type WeeklySlider = {
 	baseDate: Date;
 	setBaseDate: (date: Date) => void;
 	rangeLabel: string;
-}
+};
 
 export default function WeeklySlider(props: WeeklySlider) {
-	const {baseDate, setBaseDate, rangeLabel} = props
+	const { baseDate, setBaseDate, rangeLabel } = props;
 	const dayInMs = 86400000;
 	return (
 		<div className={styles["weekly-slider"]}>
