@@ -1,6 +1,13 @@
 @use "styles/mixins" as mixins;
 @use "styles/variables" as variables;
 
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: url('assets/fonts/inter-v19-latin-300.woff2') format('woff2');
+}
 
 @font-face {
 	font-family: 'Inter';

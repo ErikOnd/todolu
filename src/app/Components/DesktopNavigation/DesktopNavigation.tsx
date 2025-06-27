@@ -1,14 +1,21 @@
+import logoText from "@assets/logo/logo-text.png";
 import { Text } from "@atoms/Text/Text";
+import Image from "next/image";
 import styles from "./Navigation.module.scss";
 
-export function DesktopNavigation() {
+type DesktopNavigationProps = {
+	rangeLabel: string;
+};
+
+export function DesktopNavigation({ rangeLabel }: DesktopNavigationProps) {
 	return (
 		<nav className={styles["desktop-navigation"]}>
 			<div className={styles["logo-section"]}>
-				<Text size="xl">Desktop</Text>
+				<Image alt="logo" src={logoText} height={32} />
 			</div>
-			<div className={styles["navigation-section"]}>
-				<Text size="xl">Desktop</Text>
+			<div className={styles["main-section"]}>
+				<Text size="xl">Weekly Overview</Text>
+				<Text size="lg" className={styles["current-week"]}>{rangeLabel}</Text>
 			</div>
 		</nav>
 	);

@@ -8,12 +8,15 @@ import { RememberContent } from "@components/RememberContent/RememberContent";
 import { Sidebar } from "@components/SideBar/Sidebar";
 import { WeeklyContent } from "@components/WeeklyContent/WeeklyContent";
 import { useMediaQuery } from "@hooks/useMediaQuery";
+import { getCurrentWeek } from "@utils/getCurrentWeek";
 import { useState } from "react";
 
 export default function HomePage() {
 	const isMobile = useMediaQuery("(max-width: 1023px)");
 	const [selectedContent, setSelectedContent] = useState<"weekly" | "remember" | "profile">("weekly");
 	const [selectedDate, setSelectedDate] = useState<Date>(new Date());
+	const [baseDate, setBaseDate] = useState<Date>(new Date());
+	const { rangeLabel } = getCurrentWeek(baseDate);
 
 	const renderMobileContent = () => {
 		switch (selectedContent) {
@@ -36,14 +39,17 @@ export default function HomePage() {
 						<MobileNavigation
 							content={selectedContent}
 							onChange={setSelectedContent}
+							selectedDate={selectedDate}
 							onSelectDate={setSelectedDate}
+							baseDate={baseDate}
+							setBaseDate={setBaseDate}
 						/>
 						{renderMobileContent()}
 					</div>
 				)
 				: (
 					<div className={styles["desktop-view"]}>
-						<DesktopNavigation />
+						<DesktopNavigation rangeLabel={rangeLabel} />
 						<Sidebar />
 					</div>
 				)}

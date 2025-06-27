@@ -1,21 +1,21 @@
 "use client";
 
-import {useState} from "react";
+import { Text } from "@atoms/Text/Text";
+import { formatToDayLabel } from "@utils/formatToDayLabel";
+import { useState } from "react";
 import styles from "./WeeklyContent.module.scss";
-import {formatToDayLabel} from "@utils/formatToDayLabel";
-import {Text} from "@atoms/Text/Text";
 
 type WeeklyContentProps = {
 	selectedDate: Date;
 };
 
 export function WeeklyContent(props: WeeklyContentProps) {
-	const {selectedDate} = props;
+	const { selectedDate } = props;
 	console.log(selectedDate);
 
 	const [text, setText] = useState("");
-	const {weekday, date} = formatToDayLabel(selectedDate);
-	const weekdayLong = selectedDate.toLocaleDateString("en-US", {weekday: "long"});
+	const { weekday, date } = formatToDayLabel(selectedDate);
+	const weekdayLong = selectedDate.toLocaleDateString("en-US", { weekday: "long" });
 
 	return (
 		<div className={styles["weekly-content"]}>

@@ -11,6 +11,9 @@ type MobileNavigationProps = {
 	content: "weekly" | "remember" | "profile";
 	onChange: (value: "weekly" | "remember" | "profile") => void;
 	onSelectDate: (date: Date) => void;
+	selectedDate: Date;
+	baseDate: Date;
+	setBaseDate: (date: Date) => void;
 };
 
 const navItems: { value: "weekly" | "remember" | "profile"; label: string }[] = [
@@ -20,24 +23,10 @@ const navItems: { value: "weekly" | "remember" | "profile"; label: string }[] = 
 ];
 
 export function MobileNavigation(props: MobileNavigationProps) {
-	const { content, onChange, onSelectDate } = props;
-	const [baseDate, setBaseDate] = useState(new Date());
+	const { content, onChange, onSelectDate, selectedDate, baseDate, setBaseDate } = props;
 	const { days, rangeLabel } = getCurrentWeek(baseDate);
-	const todayIndex = days.findIndex((day) => day.isToday);
-	const [selectedDayIndex, setSelectedDayIndex] = useState(todayIndex);
 	const dayRefs = useRef<(HTMLButtonElement | null)[]>([]);
 	const dayInMs = 86400000;
-
-	useEffect(() => {
-		const el = dayRefs.current[selectedDayIndex];
-		if (el) {
-			el.scrollIntoView({
-				inline: "center",
-				behavior: "smooth",
-				block: "nearest",
-			});
-		}
-	}, [selectedDayIndex]);
 
 	const containerRef = useRef<HTMLDivElement>(null);
 	const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0 });
@@ -72,14 +61,14 @@ export function MobileNavigation(props: MobileNavigationProps) {
 			<div className={styles["date-section"]}>
 				<button
 					className={styles["icon-button"]}
-					onClick={() => setBaseDate(prev => new Date(prev.getTime() - 7 * dayInMs))}
+					onClick={() => setBaseDate(new Date(baseDate.getTime() - 7 * dayInMs))}
 				>
 					<Icon name="chevron-left" />
 				</button>
 				<Text>{rangeLabel}</Text>
 				<button
 					className={styles["icon-button"]}
-					onClick={() => setBaseDate(prev => new Date(prev.getTime() + 7 * dayInMs))}
+					onClick={() => setBaseDate(new Date(baseDate.getTime() + 7 * dayInMs))}
 				>
 					<Icon name="chevron-right" />
 				</button>
@@ -93,10 +82,9 @@ export function MobileNavigation(props: MobileNavigationProps) {
 						}}
 						className={clsx(
 							styles["day-button"],
-							index === selectedDayIndex && styles["active-day"],
+							fullDate.toDateString() === selectedDate.toDateString() && styles["active-day"],
 						)}
 						onClick={() => {
-							setSelectedDayIndex(index);
 							onSelectDate(fullDate);
 						}}
 					>
