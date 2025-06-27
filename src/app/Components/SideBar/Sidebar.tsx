@@ -3,6 +3,8 @@ import Image from "next/image";
 import {Text} from "@atoms/Text/Text";
 import profilePlaceholder from "@assets/images/profile-image-placeholder.jpg";
 import WeeklySlider from "@components/WeeklySlider/WeeklySlider";
+import Checkbox from "@atoms/Checkbox/Checkbox";
+import {Icon} from "@atoms/Icons/Icon";
 
 
 type SidebarProps = {
@@ -38,10 +40,27 @@ export function Sidebar(props: SidebarProps) {
 				</Text>
 				<div className={styles["remember-items"]}
 				>
-	checkboxes
+					<Checkbox label="Check emails from team"/>
+					<Checkbox label="Order new supplies"/>
+					<Checkbox label="Follow up with clients"/>
 				</div>
-				<button className={styles["test-button"]}>
+				<button className={styles["add-item"]}>
+					<Icon name="plus"/>
 					<Text>Add new Item</Text>
+				</button>
+			</div>
+			<div className={styles["settings-section"]}>
+				<button className={styles["settings-item"]}>
+					<Icon name="settings"/>
+					<Text className={styles["settings-label"]}>Settings</Text>
+				</button>
+				<button className={styles["settings-item"]}>
+					<Icon name="questionmark"/>
+					<Text className={styles["settings-label"]}>Help & Support</Text>
+				</button>
+				<button className={styles["settings-item"]}>
+					<Icon name="sign-out"/>
+					<Text className={styles["settings-label"]}>Sign Out</Text>
 				</button>
 			</div>
 		</div>

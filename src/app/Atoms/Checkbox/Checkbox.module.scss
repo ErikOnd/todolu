@@ -1,0 +1,55 @@
+@use "../../styles/variables" as variables;
+@use "../../styles/mixins" as mixins;
+@use "../../styles/typography" as typography;
+
+.checkbox {
+	display: flex;
+	align-items: center;
+	gap: .8rem;
+	cursor: pointer;
+
+	input {
+		position: absolute;
+		opacity: 0;
+		width: 0;
+		height: 0;
+	}
+
+	&:hover .checkmark {
+		background-color: var(--color-primary-light);
+	}
+
+	&:focus-within .checkmark {
+		outline: 0.2rem solid var(--color-primary);
+		outline-offset: 0.2rem;
+	}
+
+	.checkmark {
+		display: inline-block;
+		width: 2.4rem;
+		height: 2.4rem;
+		border: 0.1rem solid black;
+		border-radius: variables.$radius-sm;
+		position: relative;
+	}
+
+	input:checked + .checkmark {
+		background-color: var(--color-primary);
+	}
+
+	input:checked + .checkmark::after {
+		content: "";
+		position: absolute;
+		left: 0.85rem;
+		top: 0.45rem;
+		width: 0.5rem;
+		height: 1rem;
+		border: solid white;
+		border-width: 0 0.2rem 0.2rem 0;
+		transform: rotate(45deg);
+	}
+
+	.label {
+		font-weight: 300;
+	}
+}

@@ -4,6 +4,9 @@
 
 
 .sidebar {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	background-color: white;
 	max-width: 40rem;
 	width: 30dvw;
@@ -77,6 +80,67 @@
 
 	.remember-section {
 		padding: var(--space-lg);
+		border-bottom: .1rem solid var(--color-border);
+	}
+
+	.remember-items {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-sm);
+		margin-block: var(--space-lg);
+	}
+
+	.add-item {
+		color: var(--color-primary);
+		background-color: white;
+		border: none;
+		display: flex;
+		cursor: pointer;
+		gap: .4rem;
+		justify-content: center;
+		padding-right: .5rem;
+		padding-block: .3rem;
+
+		&:focus-visible {
+			border-radius: variables.$radius-sm;
+			outline: .2rem solid var(--color-primary);
+			outline-offset: .2rem;
+		}
+	}
+
+	.settings-section {
+		margin-top: auto;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-sm);
+		padding: var(--space-lg);
+	}
+
+	.settings-item {
+		margin-top: auto;
+		width: fit-content;
+		display: flex;
+		gap: var(--space-md);
+		background-color: white;
+		border: none;
+		cursor: pointer;
+		padding-block: .3rem;
+		padding-inline: .5rem;
+		color: var(--color-text-settings);
+
+		&:hover {
+			color: var(--color-text);
+		}
+
+		&:focus-visible {
+			color: var(--color-text);;
+			outline: .2rem solid var(--color-text);;
+			border-radius: variables.$radius-sm;
+		}
+	}
+
+	.settings-label {
+		font-weight: 300;
 	}
 
 }

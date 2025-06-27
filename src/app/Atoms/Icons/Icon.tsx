@@ -1,10 +1,18 @@
 import ChevronLeft from "@assets/icons/chevron-left.svg";
 import ChevronRight from "@assets/icons/chevron-right.svg";
+import Plus from "@assets/icons/plus.svg";
+import Questionmark from "@assets/icons/questionmark.svg";
+import Settings from "@assets/icons/settings.svg";
+import SignOut from "@assets/icons/sign-out.svg";
 import clsx from "clsx";
 
 const icons = {
 	"chevron-left": ChevronLeft,
 	"chevron-right": ChevronRight,
+	"plus": Plus,
+	"questionmark": Questionmark,
+	"settings": Settings,
+	"sign-out": SignOut,
 };
 
 type IconName = keyof typeof icons;

@@ -26,9 +26,20 @@ export function MobileNavigation(props: MobileNavigationProps) {
 	const { content, onChange, onSelectDate, selectedDate, baseDate, setBaseDate } = props;
 	const { days, rangeLabel } = getCurrentWeek(baseDate);
 	const dayRefs = useRef<(HTMLButtonElement | null)[]>([]);
-
 	const containerRef = useRef<HTMLDivElement>(null);
 	const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0 });
+
+	useEffect(() => {
+		const index = days.findIndex(({ fullDate }) =>
+			fullDate.toDateString() === selectedDate.toDateString(),
+		);
+
+		const selectedButton = dayRefs.current[index];
+		selectedButton?.scrollIntoView({
+			behavior: "smooth",
+			inline: "center",
+		});
+	}, [selectedDate, days]);
 
 	useEffect(() => {
 		const container = containerRef.current;
