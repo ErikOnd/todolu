@@ -1,10 +1,82 @@
 @use "../../styles/mixins" as mixins;
 @use "../../styles/typography" as typography;
+@use "../../styles/variables" as variables;
 
 
 .sidebar {
-	.headline1 {
-		@include typography.headline-1
+	background-color: white;
+	max-width: 40rem;
+	width: 30dvw;
+	border-right: .1rem solid var(--color-border);
+	overflow: hidden;
+	height: calc(100dvh - #{variables.$desktop-navi-height});
+
+	.profile-section {
+		display: flex;
+		border-bottom: .1rem solid var(--color-border);
+		padding: var(--space-lg);
+		gap: var(--space-md);
+	}
+
+	.profile-button {
+		height: 4.5rem;
+		width: 4.5rem;
+		border-radius: variables.$radius-rounded;
+		border: none;
+		cursor: pointer;
+
+		&:focus-visible {
+			outline: .2rem solid var(--color-primary);
+			outline-offset: .2rem;
+		}
+	}
+
+	.profile-image {
+		height: 4.5rem;
+		width: 4.5rem;
+		object-fit: cover;
+		border-radius: variables.$radius-rounded;
+	}
+
+	.profile-info {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		min-width: 0;
+		flex: 1;
+	}
+
+	.username {
+		font-weight: 700;
+	}
+
+	.email {
+		font-weight: 300;
+		color: var(--color-text-muted);
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.week-slider-section {
+		padding: var(--space-lg);
+		border-bottom: .1rem solid var(--color-border);
+
+	}
+
+	.current-week-indicator {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		margin-top: var(--space-md);
+		background-color: var(--color-primary-light);
+		padding: var(--space-sm);
+		border-radius: variables.$radius-md;
+		color: var(--color-primary);
+	}
+
+	.remember-section {
+		padding: var(--space-lg);
 	}
 
 }

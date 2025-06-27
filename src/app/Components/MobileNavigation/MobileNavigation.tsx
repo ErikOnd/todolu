@@ -1,11 +1,11 @@
 "use client";
 
-import { Icon } from "@atoms/Icons/Icon";
 import { Text } from "@atoms/Text/Text";
 import { getCurrentWeek } from "@utils/getCurrentWeek";
 import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
 import styles from "./MobileNavigation.module.scss";
+import WeeklySlider from "@components/WeeklySlider/WeeklySlider";
 
 type MobileNavigationProps = {
 	content: "weekly" | "remember" | "profile";
@@ -26,7 +26,6 @@ export function MobileNavigation(props: MobileNavigationProps) {
 	const { content, onChange, onSelectDate, selectedDate, baseDate, setBaseDate } = props;
 	const { days, rangeLabel } = getCurrentWeek(baseDate);
 	const dayRefs = useRef<(HTMLButtonElement | null)[]>([]);
-	const dayInMs = 86400000;
 
 	const containerRef = useRef<HTMLDivElement>(null);
 	const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0 });
@@ -59,19 +58,7 @@ export function MobileNavigation(props: MobileNavigationProps) {
 				<div className={styles["slider-underline"]} style={underlineStyle} />
 			</div>
 			<div className={styles["date-section"]}>
-				<button
-					className={styles["icon-button"]}
-					onClick={() => setBaseDate(new Date(baseDate.getTime() - 7 * dayInMs))}
-				>
-					<Icon name="chevron-left" />
-				</button>
-				<Text>{rangeLabel}</Text>
-				<button
-					className={styles["icon-button"]}
-					onClick={() => setBaseDate(new Date(baseDate.getTime() + 7 * dayInMs))}
-				>
-					<Icon name="chevron-right" />
-				</button>
+				<WeeklySlider baseDate={baseDate} rangeLabel={rangeLabel} setBaseDate={setBaseDate}/>
 			</div>
 			<div className={styles["calendar-section"]}>
 				{days.map(({ label, date, fullDate }, index) => (

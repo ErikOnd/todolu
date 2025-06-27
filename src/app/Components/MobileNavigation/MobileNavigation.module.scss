@@ -51,31 +51,9 @@
 	}
 
 	.date-section {
-		display: flex;
-		justify-content: space-between;
 		padding-block: var(--space-xl);
 		padding-inline: var(--content-spacing);
 		border-bottom: .1rem solid var(--color-border);
-	}
-
-	.icon-button {
-		color: var(--color-text-muted);
-		background-color: white;
-		border: none;
-		cursor: pointer;
-		width: 24px;
-		height: 24px;
-		border-radius: variables.$radius-rounded;
-
-		&:hover {
-			color: var(--color-primary);
-		}
-
-		&:focus-visible {
-			color: var(--color-primary);
-			outline: .2rem solid var(--color-primary);
-			outline-offset: .4rem;
-		}
 	}
 
 	.calendar-section {
