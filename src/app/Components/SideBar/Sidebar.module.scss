@@ -12,7 +12,6 @@
 	width: 30dvw;
 	border-right: .1rem solid var(--color-border);
 	overflow: hidden;
-	height: calc(100dvh - #{variables.$desktop-navi-height});
 
 	.profile-section {
 		display: flex;

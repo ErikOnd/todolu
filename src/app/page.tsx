@@ -53,7 +53,7 @@ export default function HomePage() {
 						<DesktopNavigation rangeLabel={rangeLabel} />
 						<div className={styles["sidebar-content-section"]}>
 							<Sidebar baseDate={baseDate} setBaseDate={setBaseDate} rangeLabel={rangeLabel} />
-							<DesktopContent />
+							<DesktopContent baseDate={baseDate} />
 						</div>
 					</div>
 				)}
