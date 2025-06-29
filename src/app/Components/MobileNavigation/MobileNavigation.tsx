@@ -66,29 +66,34 @@ export function MobileNavigation(props: MobileNavigationProps) {
 				))}
 				<div className={styles["slider-underline"]} style={underlineStyle} />
 			</div>
-			<div className={styles["date-section"]}>
-				<WeeklySlider baseDate={baseDate} rangeLabel={rangeLabel} setBaseDate={setBaseDate} />
-			</div>
-			<div className={styles["calendar-section"]}>
-				{days.map(({ label, date, fullDate }, index) => (
-					<button
-						key={index}
-						ref={(el) => {
-							dayRefs.current[index] = el;
-						}}
-						className={clsx(
-							styles["day-button"],
-							fullDate.toDateString() === selectedDate.toDateString() && styles["active-day"],
-						)}
-						onClick={() => {
-							onSelectDate(fullDate);
-						}}
-					>
-						<Text>{label}</Text>
-						<Text className={styles["day-date"]}>{date}</Text>
-					</button>
-				))}
-			</div>
+			{content === "weekly"
+				&& (
+					<>
+						<div className={styles["date-section"]}>
+							<WeeklySlider baseDate={baseDate} rangeLabel={rangeLabel} setBaseDate={setBaseDate} />
+						</div>
+						<div className={styles["calendar-section"]}>
+							{days.map(({ label, date, fullDate }, index) => (
+								<button
+									key={index}
+									ref={(el) => {
+										dayRefs.current[index] = el;
+									}}
+									className={clsx(
+										styles["day-button"],
+										fullDate.toDateString() === selectedDate.toDateString() && styles["active-day"],
+									)}
+									onClick={() => {
+										onSelectDate(fullDate);
+									}}
+								>
+									<Text>{label}</Text>
+									<Text className={styles["day-date"]}>{date}</Text>
+								</button>
+							))}
+						</div>
+					</>
+				)}
 		</nav>
 	);
 }

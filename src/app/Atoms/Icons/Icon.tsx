@@ -4,6 +4,7 @@ import Plus from "@assets/icons/plus.svg";
 import Questionmark from "@assets/icons/questionmark.svg";
 import Settings from "@assets/icons/settings.svg";
 import SignOut from "@assets/icons/sign-out.svg";
+import Star from "@assets/icons/star.svg";
 import clsx from "clsx";
 
 const icons = {
@@ -13,6 +14,7 @@ const icons = {
 	"questionmark": Questionmark,
 	"settings": Settings,
 	"sign-out": SignOut,
+	"star": Star,
 };
 
 type IconName = keyof typeof icons;
