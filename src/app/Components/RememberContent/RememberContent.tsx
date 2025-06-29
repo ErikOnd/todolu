@@ -14,7 +14,7 @@ export function RememberContent(props: RememberContentProps) {
 				<div className={styles["icon-holder"]}>
 					<Icon size={32} name="star" />
 				</div>
-				<Text size="lg">
+				<Text size="lg" className={styles["header-text"]}>
 					Memory offload station: now boarding
 				</Text>
 				<Text className={styles["header-info-text"]}>Your essential tasks, always visible</Text>
