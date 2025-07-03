@@ -1,9 +1,11 @@
 "use client";
 
+import logoText from "@assets/logo/logo-text.png";
 import { Text } from "@atoms/Text/Text";
 import WeeklySlider from "@components/WeeklySlider/WeeklySlider";
 import { getCurrentWeek } from "@utils/getCurrentWeek";
 import clsx from "clsx";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import styles from "./MobileNavigation.module.scss";
 
@@ -54,6 +56,9 @@ export function MobileNavigation(props: MobileNavigationProps) {
 
 	return (
 		<nav className={styles["mobile-navigation"]}>
+			<div className={styles["logo-section"]}>
+				<Image alt="logo" src={logoText} height={24} />
+			</div>
 			<div className={styles["slider-section"]} ref={containerRef}>
 				{navItems.map(({ value, label }) => (
 					<button

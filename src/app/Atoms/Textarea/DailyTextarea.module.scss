@@ -5,8 +5,6 @@
 .daily-textarea {
 	display: flex;
 	flex-direction: column;
-	margin: var(--content-spacing);
-	margin-bottom: 0;
 	background-color: white;
 	border-radius: variables.$radius-lg;
 	border: .1rem solid var(--color-border);
@@ -49,6 +47,7 @@
 			color: var(--color-text-placeholder);
 		}
 	}
+
 	@include mixins.tablet {
 		.textarea {
 			min-height: 40rem;

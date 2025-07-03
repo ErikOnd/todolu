@@ -7,6 +7,12 @@
 	flex-direction: column;
 	background-color: white;
 
+	.logo-section {
+		display: flex;
+		justify-content: center;
+		margin-top: var(--space-sm);
+	}
+
 	.slider-section {
 		position: relative;
 		display: flex;

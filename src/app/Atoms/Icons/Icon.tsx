@@ -1,5 +1,6 @@
 import ChevronLeft from "@assets/icons/chevron-left.svg";
 import ChevronRight from "@assets/icons/chevron-right.svg";
+import Pencil from "@assets/icons/pencil.svg";
 import Plus from "@assets/icons/plus.svg";
 import Questionmark from "@assets/icons/questionmark.svg";
 import Settings from "@assets/icons/settings.svg";
@@ -15,6 +16,7 @@ const icons = {
 	"settings": Settings,
 	"sign-out": SignOut,
 	"star": Star,
+	"pencil": Pencil,
 };
 
 type IconName = keyof typeof icons;

@@ -3,6 +3,7 @@ import Checkbox from "@atoms/Checkbox/Checkbox";
 import { Icon } from "@atoms/Icons/Icon";
 import { Text } from "@atoms/Text/Text";
 import WeeklySlider from "@components/WeeklySlider/WeeklySlider";
+import { isCurrentWeek } from "@utils/usCurrentWeek";
 import Image from "next/image";
 import styles from "./Sidebar.module.scss";
 
@@ -27,9 +28,11 @@ export function Sidebar(props: SidebarProps) {
 			</div>
 			<div className={styles["week-slider-section"]}>
 				<WeeklySlider baseDate={baseDate} rangeLabel={rangeLabel} setBaseDate={setBaseDate} />
-				<div className={styles["current-week-indicator"]}>
-					<Text>Current Week</Text>
-				</div>
+				{isCurrentWeek(baseDate) && (
+					<div className={styles["current-week-indicator"]}>
+						<Text>Current Week</Text>
+					</div>
+				)}
 			</div>
 			<div className={styles["remember-section"]}>
 				<Text className={styles["remember-header"]}>

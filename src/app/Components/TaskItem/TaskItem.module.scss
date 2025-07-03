@@ -1,3 +1,31 @@
-.task-item {
+@use "../../styles/variables" as variables;
+@use "../../styles/mixins" as mixins;
+@use "../../styles/typography" as typography;
 
+.task-item {
+	display: flex;
+	padding-inline: var(--space-lg);
+	padding-block: var(--space-xl);
+	border-radius: variables.$radius-md;
+	background: white;
+	box-shadow: 0 .1rem .2rem 0 rgba(0, 0, 0, 0.05);
+	justify-content: space-between;
+	gap: var(--space-xl);
+
+	.edit-button {
+		background-color: white;
+		color: var(--color-text-light);
+		cursor: pointer;
+		border: none;
+		padding: .3rem;
+
+		&:hover, &:focus-visible {
+			color: var(--color-primary);
+		}
+
+		&:focus-visible {
+			outline: .2rem solid var(--color-primary);
+			border-radius: variables.$radius-sm;
+		}
+	}
 }

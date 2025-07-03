@@ -31,6 +31,7 @@
 		border: 0.1rem solid black;
 		border-radius: variables.$radius-rounded;
 		position: relative;
+		flex-shrink: 0;
 	}
 
 	input:checked + .checkmark {
