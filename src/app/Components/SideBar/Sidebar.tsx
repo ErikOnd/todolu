@@ -39,7 +39,7 @@ export function Sidebar(props: SidebarProps) {
 					To Remember
 				</Text>
 				<div className={styles["remember-items"]}>
-					<Checkbox label="Check emails from team" />
+					<Checkbox label="Check emails from team Check emails from team Check emails from team Check emails from team Check emails from team Check emails from team" />
 					<Checkbox label="Order new supplies" />
 					<Checkbox label="Follow up with clients" />
 				</div>

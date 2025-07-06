@@ -1,6 +1,6 @@
 "use client";
-
 import { DailyTextarea } from "@atoms/Textarea/DailyTextarea";
+import styles from "./WeeklyContent.module.scss";
 
 type WeeklyContentProps = {
 	selectedDate: Date;
@@ -8,7 +8,10 @@ type WeeklyContentProps = {
 
 export function WeeklyContent(props: WeeklyContentProps) {
 	const { selectedDate } = props;
-	console.log(selectedDate);
 
-	return <DailyTextarea textareaDate={selectedDate} />;
+	return (
+		<div className={styles["weekly-content"]}>
+			<DailyTextarea textareaDate={selectedDate} />
+		</div>
+	);
 }

@@ -13,11 +13,11 @@
 	gap: var(--space-xl);
 
 	.edit-button {
+		height: fit-content;
 		background-color: white;
 		color: var(--color-text-light);
 		cursor: pointer;
 		border: none;
-		padding: .3rem;
 
 		&:hover, &:focus-visible {
 			color: var(--color-primary);
@@ -25,6 +25,7 @@
 
 		&:focus-visible {
 			outline: .2rem solid var(--color-primary);
+			outline-offset: .3rem;
 			border-radius: variables.$radius-sm;
 		}
 	}
