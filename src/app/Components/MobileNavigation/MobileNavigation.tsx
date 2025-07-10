@@ -42,16 +42,22 @@ export function MobileNavigation(props: MobileNavigationProps) {
 	}, [selectedDate, days]);
 
 	useEffect(() => {
-		const container = containerRef.current;
-		if (!container) return;
+		const updateUnderline = () => {
+			const container = containerRef.current;
+			if (!container) return;
 
-		const active = container.querySelector(`.${styles.active}`) as HTMLElement;
-		if (active) {
-			setUnderlineStyle({
-				left: active.offsetLeft,
-				width: active.offsetWidth,
-			});
-		}
+			const active = container.querySelector(`.${styles.active}`) as HTMLElement;
+			if (active) {
+				setUnderlineStyle({
+					left: active.offsetLeft,
+					width: active.offsetWidth,
+				});
+			}
+		};
+
+		updateUnderline();
+		window.addEventListener("resize", updateUnderline);
+		return () => window.removeEventListener("resize", updateUnderline);
 	}, [content]);
 
 	return (

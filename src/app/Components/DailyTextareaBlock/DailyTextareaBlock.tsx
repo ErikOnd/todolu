@@ -1,0 +1,22 @@
+import { Text } from "@atoms/Text/Text";
+import { formatToDayLabel } from "@utils/formatToDayLabel";
+import styles from "./DailyTextareaBlock.module.scss";
+import {SmartTextarea} from "@atoms/SmartTextarea/SmartTextarea";
+
+type DailyTextareaProps = {
+	textareaDate: Date;
+};
+
+export function DailyTextareaBlock(props: DailyTextareaProps) {
+	const { textareaDate } = props;
+	const { weekday, date } = formatToDayLabel(textareaDate);
+	return (
+		<div className={styles["daily-textarea-block"]}>
+			<div className={styles["date"]}>
+				<Text className={styles["day-batch"]}>{weekday}</Text>
+				<Text className={styles["month-and-day"]}>{date}</Text>
+			</div>
+			<SmartTextarea textareaDate={textareaDate}></SmartTextarea>
+		</div>
+	);
+}

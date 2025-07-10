@@ -1,4 +1,4 @@
-import { DailyTextarea } from "@atoms/Textarea/DailyTextarea";
+import { DailyTextareaBlock } from "@components/DailyTextareaBlock/DailyTextareaBlock";
 import { getCurrentWeek } from "@utils/getCurrentWeek";
 import styles from "./DesktopContent.module.scss";
 
@@ -14,7 +14,7 @@ export function DesktopContent(props: DesktopContentProps) {
 		<div className={styles["desktop-content"]}>
 			{days.map((day, index) => (
 				<div key={index} className={styles["textarea-wrapper"]}>
-					<DailyTextarea textareaDate={day.fullDate} />
+					<DailyTextareaBlock textareaDate={day.fullDate} />
 				</div>
 			))}
 		</div>
