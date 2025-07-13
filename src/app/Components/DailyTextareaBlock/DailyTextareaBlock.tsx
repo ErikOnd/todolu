@@ -5,10 +5,11 @@ import styles from "./DailyTextareaBlock.module.scss";
 
 type DailyTextareaProps = {
 	textareaDate: Date;
+	autoFocus?: boolean;
 };
 
 export function DailyTextareaBlock(props: DailyTextareaProps) {
-	const { textareaDate } = props;
+	const { textareaDate, autoFocus } = props;
 	const { weekday, date } = formatToDayLabel(textareaDate);
 	return (
 		<div className={styles["daily-textarea-block"]}>
@@ -16,7 +17,7 @@ export function DailyTextareaBlock(props: DailyTextareaProps) {
 				<Text className={styles["day-batch"]}>{weekday}</Text>
 				<Text className={styles["month-and-day"]}>{date}</Text>
 			</div>
-			<SmartTextarea textareaDate={textareaDate}></SmartTextarea>
+			<SmartTextarea textareaDate={textareaDate} autoFocus={autoFocus}></SmartTextarea>
 		</div>
 	);
 }

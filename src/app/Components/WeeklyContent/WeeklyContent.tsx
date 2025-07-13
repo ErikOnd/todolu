@@ -11,7 +11,7 @@ export function WeeklyContent(props: WeeklyContentProps) {
 
 	return (
 		<div className={styles["weekly-content"]}>
-			<DailyTextareaBlock textareaDate={selectedDate} />
+			<DailyTextareaBlock textareaDate={selectedDate} autoFocus={true} />
 		</div>
 	);
 }
