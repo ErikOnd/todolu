@@ -1,7 +1,7 @@
+import { SmartTextarea } from "@atoms/SmartTextarea/SmartTextarea";
 import { Text } from "@atoms/Text/Text";
 import { formatToDayLabel } from "@utils/formatToDayLabel";
 import styles from "./DailyTextareaBlock.module.scss";
-import {SmartTextarea} from "@atoms/SmartTextarea/SmartTextarea";
 
 type DailyTextareaProps = {
 	textareaDate: Date;
