@@ -42,6 +42,12 @@ export function Sidebar(props: SidebarProps) {
 					<Checkbox label="Check emails from team Check emails from team Check emails from team Check emails from team Check emails from team Check emails from team" />
 					<Checkbox label="Order new supplies" />
 					<Checkbox label="Follow up with clients" />
+					<Checkbox label="Check emails from team Check emails from team Check emails from team Check emails from team Check emails from team Check emails from team" />
+					<Checkbox label="Order new supplies" />
+					<Checkbox label="Follow up with clients" />
+					<Checkbox label="Check emails from team Check emails from team Check emails from team Check emails from team Check emails from team Check emails from team" />
+					<Checkbox label="Order new supplies" />
+					<Checkbox label="Follow up with clients" />
 				</div>
 				<button className={styles["add-item"]}>
 					<Icon name="plus" />

@@ -11,7 +11,7 @@
 	max-width: 40rem;
 	width: 30dvw;
 	border-right: .1rem solid var(--color-border);
-	overflow: hidden;
+	//overflow: hidden;
 
 	.profile-section {
 		display: flex;
@@ -78,6 +78,8 @@
 	}
 
 	.remember-section {
+		position: sticky;
+		top:0;
 		padding: var(--space-lg);
 		border-bottom: .1rem solid var(--color-border);
 	}
@@ -87,6 +89,8 @@
 		flex-direction: column;
 		gap: var(--space-sm);
 		margin-block: var(--space-lg);
+		max-height: 50dvh;
+		overflow-y: auto;
 	}
 
 	.add-item {
