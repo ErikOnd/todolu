@@ -6,13 +6,24 @@ import {Text} from "@atoms/Text/Text";
 import {Button} from "@atoms/Button/Button";
 import {FormEvent, useState} from "react";
 
-export function AddTaskModal() {
-	const [open, setOpen] = useState(false);
+
+type AddTaskModalProps = {
+	open: boolean;
+	setOpen: (open: boolean) => void;
+	defaultValue?: string;
+};
+
+
+export function AddTaskModal(props: AddTaskModalProps) {
+	const {open, setOpen, defaultValue} = props;
+	const [inputValue, setInputValue] = useState(defaultValue);
 
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		setOpen(false);
+		setInputValue("");
 	};
+
 	return (
 		<Dialog.Root open={open} onOpenChange={setOpen}>
 			<Dialog.Trigger asChild>
@@ -26,7 +37,7 @@ export function AddTaskModal() {
 					<Dialog.Title className={styles["title"]}><Text>Add New Task</Text></Dialog.Title>
 					<form onSubmit={handleSubmit}>
 						<fieldset className={styles["fieldset"]}>
-							<InputField />
+							<InputField value={inputValue} onChange={(e) => setInputValue(e.target.value)}/>
 						</fieldset>
 
 						<div className={styles["button-group"]}>
