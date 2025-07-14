@@ -1,32 +1,46 @@
-import { Icon } from "@atoms/Icons/Icon";
-import { InputField } from "@atoms/InputField/InputField";
+import {Icon} from "@atoms/Icons/Icon";
+import {InputField} from "@atoms/InputField/InputField";
 import * as Dialog from "@radix-ui/react-dialog";
 import styles from "./AddTaskModal.module.scss";
+import {Text} from "@atoms/Text/Text";
+import {Button} from "@atoms/Button/Button";
+import {FormEvent, useState} from "react";
 
 export function AddTaskModal() {
+	const [open, setOpen] = useState(false);
+
+	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		setOpen(false);
+	};
 	return (
-		<Dialog.Root>
+		<Dialog.Root open={open} onOpenChange={setOpen}>
 			<Dialog.Trigger asChild>
 				<button className={styles["add-task-button"]}>
-					<Icon name="plus" size={24} />
+					<Icon name="plus"/>
 				</button>
 			</Dialog.Trigger>
 			<Dialog.Portal>
-				<Dialog.Overlay className={styles["overlay"]} />
+				<Dialog.Overlay className={styles["overlay"]}/>
 				<Dialog.Content className={styles["content"]}>
-					<Dialog.Title className={styles["title"]}>Add New Task</Dialog.Title>
-					<fieldset className={styles["fieldset"]}>
-						<InputField />
-					</fieldset>
-					<Dialog.Close asChild>
-						<button>Save Task</button>
-					</Dialog.Close>
+					<Dialog.Title className={styles["title"]}><Text>Add New Task</Text></Dialog.Title>
+					<form onSubmit={handleSubmit}>
+						<fieldset className={styles["fieldset"]}>
+							<InputField />
+						</fieldset>
 
-					<Dialog.Close asChild>
-						<button aria-label="Close">
-							close button
-						</button>
-					</Dialog.Close>
+						<div className={styles["button-group"]}>
+							<Button type="submit" variant="primary" fontWeight={700}>
+								Save Task
+							</Button>
+
+							<Dialog.Close asChild>
+								<Button variant="secondary" aria-label="Close" fontWeight={700}>
+									Close
+								</Button>
+							</Dialog.Close>
+						</div>
+					</form>
 				</Dialog.Content>
 			</Dialog.Portal>
 		</Dialog.Root>

@@ -52,3 +52,8 @@ $breakpoints: (
 		#{$max-size}rem
 	);
 }
+
+@mixin background-shadow {
+	-webkit-box-shadow: 15px 15px 34px -8px rgba(0,0,0,0.55);
+	box-shadow: 15px 15px 34px -8px rgba(0,0,0,0.55);
+}

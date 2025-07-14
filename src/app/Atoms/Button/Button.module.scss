@@ -1,0 +1,40 @@
+@use "../../styles/variables" as variables;
+@use "../../styles/mixins" as mixins;
+
+.button {
+	border: none;
+	border-radius: variables.$radius-lg;
+	padding: 1.6rem 3.2rem;
+	cursor: pointer;
+	transition: background-color 0.2s ease, color 0.2s ease;
+
+	&:focus-visible {
+		outline-offset: 0.2rem;
+	}
+}
+
+.primary {
+	background-color: var(--color-primary);
+	color: white;
+
+	&:hover, &:focus-visible {
+		background-color: var(--color-primary-dark);
+	}
+
+	&:focus-visible {
+		outline: 0.2rem solid var(--color-primary);
+	}
+}
+
+.secondary {
+	background-color: var(--color-day-label);
+	color: var(--color-text);
+
+	&:hover, &:focus-visible {
+		background-color: var(--color-primary-light);
+	}
+
+	&:focus-visible {
+		outline: 0.2rem solid var(--color-primary);
+	}
+}
