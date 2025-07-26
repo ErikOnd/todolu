@@ -1,11 +1,10 @@
-import {Icon} from "@atoms/Icons/Icon";
-import {InputField} from "@atoms/InputField/InputField";
+import { Button } from "@atoms/Button/Button";
+import { Icon } from "@atoms/Icons/Icon";
+import { InputField } from "@atoms/InputField/InputField";
+import { Text } from "@atoms/Text/Text";
 import * as Dialog from "@radix-ui/react-dialog";
+import { FormEvent, useState } from "react";
 import styles from "./AddTaskModal.module.scss";
-import {Text} from "@atoms/Text/Text";
-import {Button} from "@atoms/Button/Button";
-import {FormEvent, useState} from "react";
-
 
 type AddTaskModalProps = {
 	open: boolean;
@@ -13,9 +12,8 @@ type AddTaskModalProps = {
 	defaultValue?: string;
 };
 
-
 export function AddTaskModal(props: AddTaskModalProps) {
-	const {open, setOpen, defaultValue} = props;
+	const { open, setOpen, defaultValue } = props;
 	const [inputValue, setInputValue] = useState(defaultValue);
 
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -28,16 +26,18 @@ export function AddTaskModal(props: AddTaskModalProps) {
 		<Dialog.Root open={open} onOpenChange={setOpen}>
 			<Dialog.Trigger asChild>
 				<button className={styles["add-task-button"]}>
-					<Icon name="plus"/>
+					<Icon name="plus" />
 				</button>
 			</Dialog.Trigger>
 			<Dialog.Portal>
-				<Dialog.Overlay className={styles["overlay"]}/>
+				<Dialog.Overlay className={styles["overlay"]} />
 				<Dialog.Content className={styles["content"]}>
-					<Dialog.Title className={styles["title"]}><Text>Add New Task</Text></Dialog.Title>
+					<Dialog.Title className={styles["title"]}>
+						<Text>Add New Task</Text>
+					</Dialog.Title>
 					<form onSubmit={handleSubmit}>
 						<fieldset className={styles["fieldset"]}>
-							<InputField value={inputValue} onChange={(e) => setInputValue(e.target.value)}/>
+							<InputField value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
 						</fieldset>
 
 						<div className={styles["button-group"]}>

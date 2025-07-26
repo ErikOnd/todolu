@@ -1,7 +1,7 @@
+import { Text } from "@atoms/Text/Text";
 import clsx from "clsx";
-import {ReactNode} from "react";
+import { ReactNode } from "react";
 import styles from "./Button.module.scss";
-import {Text} from "@atoms/Text/Text";
 
 type ButtonProps = {
 	variant?: "primary" | "secondary";
@@ -14,14 +14,14 @@ type ButtonProps = {
 };
 
 export function Button({
-	                       variant = "primary",
-	                       children,
-	                       className,
-	                       type = "button",
-	                       size,
-	                       fontWeight,
-	                       onClick,
-                       }: ButtonProps) {
+	variant = "primary",
+	children,
+	className,
+	type = "button",
+	size,
+	fontWeight,
+	onClick,
+}: ButtonProps) {
 	return (
 		<button
 			type={type}

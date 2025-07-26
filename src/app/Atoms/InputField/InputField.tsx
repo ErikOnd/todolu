@@ -9,12 +9,12 @@ type InputFieldProps = {
 };
 
 export function InputField({
-	                           value,
-	                           onChange,
-	                           id,
-	                           name,
-	                           placeholder = "Add a new task",
-                           }: InputFieldProps) {
+	value,
+	onChange,
+	id,
+	name,
+	placeholder = "Add a new task",
+}: InputFieldProps) {
 	return (
 		<input
 			className={styles["input-field"]}

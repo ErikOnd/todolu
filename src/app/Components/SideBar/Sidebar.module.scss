@@ -80,17 +80,23 @@
 	.remember-section {
 		position: sticky;
 		top:0;
-		padding: var(--space-lg);
+		padding-block: var(--space-lg);
 		border-bottom: .1rem solid var(--color-border);
+	}
+
+	.remember-header {
+		padding-inline: var(--space-lg);
+		margin-bottom: var(--space-lg);
 	}
 
 	.remember-items {
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-sm);
-		margin-block: var(--space-lg);
 		max-height: 50dvh;
 		overflow-y: auto;
+		margin: var(--space-lg) 0 var(--space-lg) var(--space-lg);
+		padding-right: var(--space-lg);
 	}
 
 	.add-item {
@@ -103,6 +109,7 @@
 		justify-content: center;
 		padding-right: .5rem;
 		padding-block: .3rem;
+		margin-inline: var(--space-lg);;
 
 		&:focus-visible {
 			border-radius: variables.$radius-sm;

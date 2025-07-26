@@ -35,7 +35,7 @@ export function Sidebar(props: SidebarProps) {
 				)}
 			</div>
 			<div className={styles["remember-section"]}>
-				<Text className={styles["remember-header"]}>
+				<Text size="xl" className={styles["remember-header"]}>
 					To Remember
 				</Text>
 				<div className={styles["remember-items"]}>

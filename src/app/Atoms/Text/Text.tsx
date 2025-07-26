@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import {ReactNode} from "react";
+import { ReactNode } from "react";
 import styles from "./Text.module.scss";
 
 type TextProps = {
@@ -11,19 +11,19 @@ type TextProps = {
 };
 
 export function Text({
-	                     size = "base",
-	                     as = "div",
-	                     children,
-	                     className,
-	                     fontWeight,
-                     }: TextProps) {
+	size = "base",
+	as = "div",
+	children,
+	className,
+	fontWeight,
+}: TextProps) {
 	const Tag = as;
 	return (
 		<Tag
 			className={clsx(
 				styles[`text-${size}`],
 				fontWeight && styles[`weight-${fontWeight}`],
-				className
+				className,
 			)}
 		>
 			{children}
