@@ -1,9 +1,12 @@
-import styles from "./SmartEditor.module.scss";
+import React from "react";
+import { useCreateBlockNote } from "@blocknote/react";
+import { BlockNoteView } from "@blocknote/mantine";
+import "@blocknote/mantine/style.css";
 
 export function SmartEditor() {
-	return (
-		<div className={styles["smart-editor"]}>
-			{/*https://editorjs.io/getting-started/*/}
-		</div>
-	);
+	// Create a new editor instance
+	const editor = useCreateBlockNote();
+
+	// Render the editor
+	return <BlockNoteView editor={editor} />;
 }
