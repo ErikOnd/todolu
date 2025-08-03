@@ -20,8 +20,8 @@
 
 	.day-batch {
 		color: var(--color-primary);
-		padding-inline: .8rem;
-		padding-block: .4rem;
+		padding-inline: .5rem;
+		padding-block: .3rem;
 		border-radius: variables.$radius-md;
 		background-color: var(--color-primary-light);
 	}
@@ -32,15 +32,15 @@
 
 	.textarea {
 		@include typography.text-base;
-		min-height: 20rem;
+		min-height: 12.5rem;
 		resize: vertical;
 		padding: var(--space-md);
 		margin: var(--space-md);
 		border: 1px solid #ccc;
-		border-radius: 0.5rem;
+		border-radius: 0.3rem;
 
 		&:focus-visible {
-			outline: .2rem solid var(--color-primary);
+			outline: .1rem solid var(--color-primary);
 		}
 
 		&::placeholder {
@@ -50,7 +50,7 @@
 
 	@include mixins.tablet {
 		.textarea {
-			min-height: 40rem;
+			min-height: 25rem;
 		}
 	}
 }

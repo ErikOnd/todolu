@@ -4,10 +4,10 @@
 .add-task-button {
 	@include mixins.background-shadow;
 	position: fixed;
-	right: 2.4rem;
-	bottom: 2.4rem;
-	width: 5.6rem;
-	height: 5.6rem;
+	right: 1.5rem;
+	bottom: 1.5rem;
+	width: 3.5rem;
+	height: 3.5rem;
 	border-radius: variables.$radius-rounded;
 	background-color: var(--color-primary);
 	color: white;
@@ -20,8 +20,8 @@
 	}
 
 	&:focus-visible {
-		outline: .2rem solid var(--color-primary);
-		outline-offset: .2rem;
+		outline: .1rem solid var(--color-primary);
+		outline-offset: .1rem;
 	}
 }
 
@@ -44,7 +44,7 @@
 	left: 0;
 	width: 100%;
 	background-color: white;
-	padding: 2.5rem;
+	padding: 1.6rem;
 	border-radius: 0 0 variables.$radius-lg variables.$radius-lg;
 	z-index: 1000;
 	animation-duration: 1000ms;
@@ -63,8 +63,8 @@
 	}
 
 	.Description {
-		margin: 1rem 0 2rem;
-		font-size: 1.5rem;
+			margin: 0.6rem 0 1.3rem;
+	font-size: 0.9rem;
 		color: #444;
 		line-height: 1.5;
 	}
@@ -73,9 +73,9 @@
 	.fieldset {
 		border: none;
 		display: flex;
-		gap: 2rem;
+		gap: 1.3rem;
 		align-items: center;
-		margin-bottom: 1.5rem;
+		margin-bottom: 0.9rem;
 	}
 
 	.button-group {

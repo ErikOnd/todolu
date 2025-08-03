@@ -44,31 +44,31 @@
 }
 
 @mixin text-xl {
-	font-size: 2rem;
+	font-size: 1.3rem;
 	font-weight: 600;
 	line-height: 1.4;
 }
 
 @mixin text-lg {
-	font-size: 1.8rem;
+	font-size: 1.1rem;
 	font-weight: 500;
 	line-height: 1.5;
 }
 
 @mixin text-base {
-	font-size: 1.6rem;
+	font-size: 1rem;
 	font-weight: 500;
 	line-height: 1.6;
 }
 
 @mixin text-sm {
-	font-size: 1.4rem;
+	font-size: 0.9rem;
 	font-weight: 500;
 	line-height: 1.6;
 }
 
 @mixin text-xs {
-	font-size: 1.2rem;
+	font-size: 0.8rem;
 	font-weight: 500;
 	line-height: 1.4;
 }

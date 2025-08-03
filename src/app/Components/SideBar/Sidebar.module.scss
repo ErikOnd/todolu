@@ -8,7 +8,7 @@
 	flex-direction: column;
 	justify-content: space-between;
 	background-color: white;
-	max-width: 40rem;
+	max-width: 25rem;
 	width: 30dvw;
 	border-right: .1rem solid var(--color-border);
 	//overflow: hidden;
@@ -21,21 +21,21 @@
 	}
 
 	.profile-button {
-		height: 4.5rem;
-		width: 4.5rem;
+		height: 2.8rem;
+		width: 2.8rem;
 		border-radius: variables.$radius-rounded;
 		border: none;
 		cursor: pointer;
 
 		&:focus-visible {
-			outline: .2rem solid var(--color-primary);
-			outline-offset: .2rem;
+			outline: .1rem solid var(--color-primary);
+			outline-offset: .1rem;
 		}
 	}
 
 	.profile-image {
-		height: 4.5rem;
-		width: 4.5rem;
+		height: 2.8rem;
+		width: 2.8rem;
 		object-fit: cover;
 		border-radius: variables.$radius-rounded;
 	}
@@ -105,16 +105,16 @@
 		border: none;
 		display: flex;
 		cursor: pointer;
-		gap: .4rem;
+		gap: .3rem;
 		justify-content: center;
-		padding-right: .5rem;
-		padding-block: .3rem;
+		padding-right: .3rem;
+		padding-block: .2rem;
 		margin-inline: var(--space-lg);;
 
 		&:focus-visible {
 			border-radius: variables.$radius-sm;
-			outline: .2rem solid var(--color-primary);
-			outline-offset: .2rem;
+			outline: .1rem solid var(--color-primary);
+			outline-offset: .1rem;
 		}
 	}
 
@@ -134,8 +134,8 @@
 		background-color: white;
 		border: none;
 		cursor: pointer;
-		padding-block: .3rem;
-		padding-inline: .5rem;
+		padding-block: .2rem;
+		padding-inline: .3rem;
 		color: var(--color-text-settings);
 
 		&:hover {
@@ -144,7 +144,7 @@
 
 		&:focus-visible {
 			color: var(--color-text);;
-			outline: .2rem solid var(--color-text);;
+			outline: .1rem solid var(--color-text);;
 			border-radius: variables.$radius-sm;
 		}
 	}
