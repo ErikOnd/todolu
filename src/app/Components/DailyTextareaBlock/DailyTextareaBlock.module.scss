@@ -7,12 +7,12 @@
 	flex-direction: column;
 	background-color: white;
 	border-radius: variables.$radius-lg;
-	border: .1rem solid var(--color-border);
+	border: 0.1rem solid var(--color-border);
 
 	.date {
 		@include typography.text-base;
 		display: flex;
-		border-bottom: .1rem solid var(--color-border);
+		border-bottom: 0.1rem solid var(--color-border);
 		padding: var(--space-md);
 		gap: var(--space-sm);
 		align-items: center;
@@ -20,8 +20,8 @@
 
 	.day-batch {
 		color: var(--color-primary);
-		padding-inline: .8rem;
-		padding-block: .4rem;
+		padding-inline: 0.5rem;
+		padding-block: 0.3rem;
 		border-radius: variables.$radius-md;
 		background-color: var(--color-primary-light);
 	}
@@ -32,15 +32,15 @@
 
 	.textarea {
 		@include typography.text-base;
-		min-height: 20rem;
+		min-height: 12.5rem;
 		resize: vertical;
 		padding: var(--space-md);
 		margin: var(--space-md);
 		border: 1px solid #ccc;
-		border-radius: 0.5rem;
+		border-radius: 0.3rem;
 
 		&:focus-visible {
-			outline: .2rem solid var(--color-primary);
+			outline: 0.1rem solid var(--color-primary);
 		}
 
 		&::placeholder {
@@ -50,7 +50,7 @@
 
 	@include mixins.tablet {
 		.textarea {
-			min-height: 40rem;
+			min-height: 25.0rem;
 		}
 	}
 }

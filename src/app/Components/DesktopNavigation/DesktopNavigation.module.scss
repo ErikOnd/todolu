@@ -5,14 +5,14 @@
 .desktop-navigation {
 	display: flex;
 	align-items: center;
-	border-bottom: .1rem solid var(--color-border);
+	border-bottom: 0.1rem solid var(--color-border);
 	background-color: white;
 	height: variables.$desktop-navi-height;
 
 	.logo-section {
 		padding: var(--space-lg);
-		border-right: .1rem solid var(--color-border);
-		max-width: 40rem;
+		border-right: 0.1rem solid var(--color-border);
+		max-width: 25.0rem;
 		width: 30dvw;
 	}
 
