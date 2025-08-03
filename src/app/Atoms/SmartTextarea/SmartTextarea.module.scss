@@ -4,7 +4,7 @@
 
 .smart-textarea {
 	@include typography.text-base;
-	min-height: 20rem;
+	min-height: 12.5rem;
 	resize: vertical;
 	padding: var(--space-md);
 	margin: var(--space-md);
@@ -12,7 +12,7 @@
 	border-radius: variables.$radius-md;
 
 	&:focus-visible {
-		outline: .2rem solid var(--color-primary);
+		outline: 0.1rem solid var(--color-primary);
 	}
 
 	&::placeholder {
