@@ -1,6 +1,6 @@
-import React from "react";
-import { useCreateBlockNote } from "@blocknote/react";
 import { BlockNoteView } from "@blocknote/mantine";
+import { useCreateBlockNote } from "@blocknote/react";
+import React from "react";
 import "@blocknote/mantine/style.css";
 
 export function SmartEditor() {
