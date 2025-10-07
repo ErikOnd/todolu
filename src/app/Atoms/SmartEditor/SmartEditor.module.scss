@@ -2,19 +2,7 @@
 @use "../../styles/variables" as variables;
 
 .smart-editor {
+	padding-block: var(--space-md);
 	@include typography.text-base;
-	min-height: 12.5rem;
-	resize: vertical;
-	padding: var(--space-md);
-	margin: var(--space-md);
-	border: 1px solid #ccc;
-	border-radius: variables.$radius-md;
-
-	&:focus-visible {
-		outline: .1rem solid var(--color-primary);
-	}
-
-	&::placeholder {
-		color: var(--color-text-placeholder);
-	}
+	min-height: 12.5rem; 	
 }
