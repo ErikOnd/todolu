@@ -17,8 +17,8 @@ export function DailyTextareaBlock(props: DailyTextareaProps) {
 				<Text className={styles["day-batch"]}>{weekday}</Text>
 				<Text className={styles["month-and-day"]}>{date}</Text>
 			</div>
-			<SmartEditor />
-			{/*<SmartTextarea textareaDate={textareaDate} autoFocus={autoFocus}></SmartTextarea>*/}
+			{/*<SmartEditor />*/}
+			{/*BlockNote currently creates a problem*/}
 		</div>
 	);
 }
