@@ -1,8 +1,18 @@
 @use "../../styles/typography" as typography;
 @use "../../styles/variables" as variables;
 
+
 .smart-editor {
 	padding-block: var(--space-md);
 	@include typography.text-base;
-	min-height: 12.5rem; 	
+	min-height: 12.5rem;
+
+	:global(.bn-block-content)[data-content-type="checkListItem"]
+	> input[type="checkbox"] {
+		margin-right: .5rem;
+	}
 }
+
+
+
+

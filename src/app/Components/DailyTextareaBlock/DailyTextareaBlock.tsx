@@ -1,4 +1,8 @@
-import { SmartEditor } from "@atoms/SmartEditor/SmartEditor";
+import dynamic from "next/dynamic";
+const SmartEditor = dynamic(() => import("@atoms/SmartEditor/SmartEditor"), {
+	ssr: false,
+});
+
 import { Text } from "@atoms/Text/Text";
 import { formatToDayLabel } from "@utils/formatToDayLabel";
 import styles from "./DailyTextareaBlock.module.scss";
@@ -17,8 +21,7 @@ export function DailyTextareaBlock(props: DailyTextareaProps) {
 				<Text className={styles["day-batch"]}>{weekday}</Text>
 				<Text className={styles["month-and-day"]}>{date}</Text>
 			</div>
-			{/*<SmartEditor />*/}
-			{/*BlockNote currently creates a problem*/}
+			<SmartEditor />
 		</div>
 	);
 }
